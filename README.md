@@ -311,6 +311,14 @@ userlist_enable=YES
 mkdir /var/ftp/rhel8 #在ftp根目录下创建安装盘加载目录
 mount /dev/cdrom /var/ftp/rhel8 #挂载光盘到rhel8
 ```
+### 6.4 启动vsftp
+```
+systemctl start vsftpd.service  #启动服务
+systemctl enable vsftpd.service #开机自启服务
+firewall-cmd --add-service=ftp --permanent  # 通过防火墙注意此处是ftp 而不是vsftp
+firewall-cmd  --reload
+service vsftpd status #最后查看运行状态，注意这里是vsftpd了
+```
 ## 7 配置PXE环境
 ### 7.1 
 ```
