@@ -393,7 +393,7 @@ label linux
   menu label ^Install Red Hat Enterprise Linux 8.0.0
   kernel vmlinuz
   #根据自己的情况修改此处，repo定位在挂载安装关盘的目录，ks为自动值守文件，放在最后配置，此时用不到
-  append initrd=initrd.img repo=ftp://192.168.122.128/rhel8 #ks=ftp://192.168.122.128/pub/anaconda-ks.cfg
+  append initrd=initrd.img repo=ftp://192.168.122.128/rhel8  #ks=ftp://192.168.122.128/pub/anaconda-ks.cfg 
   
 #该部分对于自动安装用处不大，注掉即可
 #label check
@@ -456,7 +456,7 @@ menu end
 ## 8 第二次联机测试
 此时配置完vsftp，可以进行第二次联机测试，客户机应该可以从服务器vsftp处匿名下载到安装rhel8所需要的文件，如果安装成功，则可以进行最后一部分，配置kickstart，进行自动安装
 ## 9 配置kickstart自动值守文件
-将自动值守文件拷贝到ftp/pub 目录下
+### 9.1 将自动值守文件拷贝到ftp/pub 目录下
 ```
 cp /root/anaconda-ks.cfg  /var/ftp/pub
 ```
@@ -543,3 +543,7 @@ part / --fstype="xfs" --size=18131
 
 %end
 ```
+### 9.2 修改default文件
+恢复 ks定位
+ks=ftp://192.168.122.128/pub/anaconda-ks.cfg
+## 10 最终测试
