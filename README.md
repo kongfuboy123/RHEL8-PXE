@@ -7,7 +7,7 @@
 
 ### 1.2 配置本地repo库
 ```
-cd /etc/yum.repos.d  #进入该文件夹,这里存放本地库配置文件
+cd /etc/yum.repos.d  #进入该文件夹,这里存放本地库配置文件，如果有配置文件的话，那就备份一下，如果没有，就直接创建新的配置文件。
 mkdir bak     #创建bak 文件夹
 cp /*.repo bak   #把本地配置文件拷到bak 
 vi rhel8-local.repo  #创建本地库配置文件，根据配置文件修改挂iso载地址即可
