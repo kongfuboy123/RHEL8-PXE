@@ -33,7 +33,7 @@ yum clean all #清除缓存
 yum makecache #重新缓存
 yum repolist #查看本地库列表
 ```
-## 2. 安装配置dhcp-sever
+## 2. 安装配置dhcp-sever 注：先关闭虚拟机的dhcp功能
 ### 2.1 安装 dhcp-server
 ``
 yum -y install dhcp-server  #rhel8里是安装dhcp-server，8之前是直安装dhcp
